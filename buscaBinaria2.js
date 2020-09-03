@@ -1,5 +1,5 @@
 let comp = 0
-
+const nomes = require("./dados/lista-nomes")
 
 
 function buscaBin(lista, valor, fncomp) {
@@ -25,3 +25,11 @@ function buscaBin(lista, valor, fncomp) {
     }
     return - 1
 }
+
+let res = buscaBin(nomes, "FAUSTO", (obj, busca) => {
+    if (obj.first_name == busca) return 0
+    else if (busca < obj.first_name) return -1
+    else return 1
+})
+console.log(res)
+console.log(comp)
